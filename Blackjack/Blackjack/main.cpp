@@ -4,7 +4,7 @@
 
 	Card - Карта для игры 
 
-	Hand - наьор карт 
+	Hand - набор карт 
 
 	Deck - произвобный класс от Hand ,который собой представляет колоду 
 
@@ -55,7 +55,15 @@ int main()
 
 		std::cin >> name;
 
-		names.push_back(name);
+		if ( std::find(names.begin(), names.end(), name) == names.end() )
+		{
+			names.push_back(name);
+		}
+		else
+		{
+			std::cout << "You enter bad name " << std::endl;
+			i--;
+		}
 	}
 	std::cout << std::endl;
 
@@ -67,7 +75,7 @@ int main()
 	{
 		aGame.Play();
 
-		std :: cout << std::endl << "Do you want to play again ? (Y / N)";
+		std :: cout << std::endl << "Do you want to play again ? (N / n - exit)" << std::endl;
 		std::cin >> again;
 	}
 	

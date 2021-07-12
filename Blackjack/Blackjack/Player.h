@@ -12,4 +12,3 @@ public:
 
 	void Result(const std::string& result)const;
 };
-
